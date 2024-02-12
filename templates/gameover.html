@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body class="gameoverpage">
+
+
+<div class="gameover">
+   <div id="wrapper" class="wrapper">
+    <form action="/gameover" method="POST">
+        <div class="nickname">
+			<label>Registrar Jugador</label>
+            <input type="text" name="nombre" placeholder="Nombre">
+
+        </div>
+        <div class="guardar">
+            <button type="submit">Guardar jugador</button>
+        </div>
+        <div id="jugadorGuardado" style="display: none;">Jugador guardado</div>
+        <input type="hidden" id="jugadorGuardadoInput" name="jugadorGuardado" value="false">
+    </form>
+</div>
+        <div id="dosbotones">
+        <a href="dinogame">
+            <button class="boton">Volver a Jugar</button>
+        </a>
+            <a href="jugadores">
+            <button class="boton">Ver Jugadores</button>
+        </a>
+        </div>
+<script src="static/gameover.js"></script>
+</div>
+{% endblock %}

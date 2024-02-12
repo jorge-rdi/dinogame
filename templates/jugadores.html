@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <body class="scoring">
+        <h2>Jugadores</h2>
+        <div class="col-md-7">
+            <div class="content-table-container">
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Opciones</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in data %}
+                            <tr>
+                                <td>{{ c.1 }}</td>
+                                <td>
+                                    <a href="/edit/{{c.0}}" class="btn btn-secondary">Editar nombre</a>
+                                    <a href="/delete/{{c.0}}" class="btn btn-danger btn-delete">Eliminar</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <div id="volver">
+            <a href="dinogame">
+                <button class="boton">Volver a Jugar</button>
+            </a>
+        </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body class="editgeneral">
+
+<div class="edit.1">
+  <h1 id="editnombre">Editar nombre:</h1>
+  <div id=edit2 class="edit.2">
+    <form action="/update/{{contact.0}}" method="POST">
+      <div class="form.group">
+         <input type="text" class="form-control" value="{{contact.1}}" name="nombre" placeholder="Nombre">
+      </div>
+        <button class="btn btn primary btn-block" id="botonedit" type="submit">Actualizar</button>
+    </form>
+  </div>
+</div>
+</body>
+{%endblock%}
